@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Course Enrollment Form </title>
+    </head>
+    <body>
+        <header>
+            <h1 align="center">online learning platform</h1>
+        </header>
+        <section>
+            <form action="enrolmentpage.php" method="post" autocomplete="off">
+                <fieldset>
+                    <legend>course Enrollment form</legend>
+                    <label>name:</label>
+                    <input type="text" required id="name" name="name" placeholder="enter name">
+                    <br/><br/>
+                    <label>email:</label>
+                    <input type="email" required id="emial" name="email" placeholder="enter email id">
+                    <br/>
+                    <br/>
+                    <label>Select Course:</label>
+                    <input list="courses" id="course" name="course" required placeholder="Choose or type course">
+                    <datalist id="courses">
+                    <option value="HTML">
+                    <option value="CSS">
+                    <option value="JavaScript">
+                    <option value="React">
+                    <option value="Full Stack Development">
+                    </datalist>
+                    <br/>
+                    <br/>
+                    <label>Skill Level (1-Beginner to 10-Advanced):</label>
+                    <input type="range" id="skill" name="skill" min="1" max="10" required>
+                    <br/><br/>
+                    <label>Skill Level Indicator:</label>
+                    <meter min="1" max="10" value="5" id="m1" name="m1"></meter>
+                    <br/>
+                    <br/>
+                    <label>age:</label>
+                    <input type="number" min="10" max="60" required id="age" name="age" placeholder="enter age">
+                    <label>Enrollment Completion:</label>
+                    <progress id="p1" name="p1" value="70" min="10" max="100"></progress>
+                    <br/>
+                    <br/>
+                    <input type="submit" value="Enroll Now">
+                </fieldset>
+            </form>
+        </section>
+    </body>
+</html>

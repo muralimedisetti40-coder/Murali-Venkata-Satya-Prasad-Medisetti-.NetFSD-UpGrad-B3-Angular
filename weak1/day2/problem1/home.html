@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Institute - Home</title>
+</head>
+<body>
+
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Welcome to ABC Coaching Institute</h1>
+    <p>Please register for our courses below.</p>
+
+    <form action="#" method="post">
+
+        <h2>Registration Form</h2>
+
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" 
+               placeholder="Enter your full name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" 
+               placeholder="Enter your email address" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" 
+               placeholder="Create a password" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+        <label for="course">Select Course:</label><br>
+        <select id="course" name="course" required>
+            <option value="">-- Select a Course --</option>
+            <option value="java">Java Programming</option>
+            <option value="web">Web Development</option>
+            <option value="python">Python Basics</option>
+        </select><br><br>
+
+        <input type="submit" value="Register">
+
+    </form>
+
+</body>
+</html>
