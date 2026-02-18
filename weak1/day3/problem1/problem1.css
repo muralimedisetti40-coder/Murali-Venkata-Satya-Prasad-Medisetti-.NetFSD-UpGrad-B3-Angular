@@ -1,0 +1,29 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+h2 {
+    color: green;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.para {
+    color: purple;
+    font-style: italic;
+}
+.box-model {
+    background-color: lightblue;
+    border: 2px dashed blue;
+    padding: 20px;
+    margin: 30px;
+}
+
