@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+         basic js
+        </title>
+    </head>
+    <body>
+        <h1>javascript basics</h1>
+        <input type="number" id="n1" name="n1">
+        <input type="button" onclick="bclick()" value="check">
+        <p id="p1"></p>
+        <script>
+            function bclick(){
+              let num=document.getElementById("n1");
+              let para=document.getElementById("p1");
+              let n=Number(num.value);
+              let result="";
+              result+=(n>0)?"positive<br/>":"nagative<br/>";
+              if(n%2==0){
+                result+="even<br/>";
+              }else{
+               result+="odd<br/>";}
+               for (let i = 1; i <= n; i++) {
+               result += i + "<br/>";
+              }
+               para.innerHTML=result;
+
+            }
+
+        </script>
+    </body>
+</html>

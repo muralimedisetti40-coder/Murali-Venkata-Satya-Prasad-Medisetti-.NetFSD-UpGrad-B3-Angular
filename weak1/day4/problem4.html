@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Signal Simulator</title>
+</head>
+<body>
+<h1>problem4</h1>
+<input type="text" id="n1" name="n1">
+<input type="button" onclick="bclick()" value="check">
+<script>
+ function bclick(){
+    let num=document.getElementById("n1");
+    let signal = num.value;   
+    switch (signal) {
+        case "red":
+            console.log("Stop");
+            break;
+        case "yellow":
+            console.log("Get Ready");
+            break;
+        case "green":
+            console.log("Go");
+            break;
+        default:
+            console.log("Invalid Signal Color");
+    }
+ }
+</script>
+</body>
+</html>

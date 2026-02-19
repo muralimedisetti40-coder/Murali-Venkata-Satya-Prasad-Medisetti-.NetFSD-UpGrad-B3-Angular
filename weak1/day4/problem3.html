@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+         discount
+        </title>
+    </head>
+    <body>
+        <h1>Discount Calculator</h1>
+        <input type="number" id="n1" name="n1">
+        <input type="button" onclick="bclick()" value="check">
+        <p id="p1"></p>
+        <script>
+            function bclick(){
+              let num=document.getElementById("n1");
+              let para=document.getElementById("p1");
+              let discount=0;
+              let finalamount=0;
+              let n=Number(num.value);
+              if(n>=5000){
+                  discount=n*0.20;
+               }else if(n>=3000){
+                  discount=n*0.10;
+              }
+              finalamount=n-discount;
+              para.innerText=finalamount;
+            }
+        </script>
+    </body>
+</html>

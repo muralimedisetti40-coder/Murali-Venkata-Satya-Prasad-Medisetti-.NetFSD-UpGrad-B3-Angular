@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        nav {
+            background-color: darkblue;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav a {
+            color: white;
+            font-size: 18px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                background-color: lightgreen; 
+            }
+
+            nav {
+                background-color: red;
+                flex-direction: column;  
+                align-items: center;
+            }
+
+            nav a {
+                padding: 10px;
+                font-size: 16px; 
+            }
+
+            h1 {
+                font-size: 24px;  
+            }
+
+            p {
+                font-size: 14px;  
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h1>Responsive Web Design</h1>
+    <p>This page adapts to mobile and desktop screens.</p>
+
+</body>
+</html>
