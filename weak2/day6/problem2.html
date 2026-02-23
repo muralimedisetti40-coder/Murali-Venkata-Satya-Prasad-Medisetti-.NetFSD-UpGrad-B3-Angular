@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head><title>form validation</title></head>
+    <body>
+        <h1>form validation</h1>
+        <label>name</label>
+        <input type="text" id="name" placeholder="enter name" onchange="validname()">
+        <span id="name1"></span>
+        <label>email</label>
+        <input type="text" id="email" placeholder="enter email" onchange="validemail()">
+        <span id="email1"></span>
+        <label>age</label>
+        <input type="text" id="age" placeholder="enter age" onchange="validge()">   
+        <span id="age1"></span>
+        <button onclick="submit()">submit</button>
+        <script>
+            function validname(){
+                let name=document.getElementById("name").value;
+                if(name.trim()!==""){
+                document.getElementById("name1").innerHTML="valid name!";
+                }else{
+                document.getElementById("name1").innerHTML="invalid name!";
+                }
+            }
+            function validemail(){
+                let mail=document.getElementById("email").value;
+                if(mail.includes("@")){
+                    document.getElementById("email1").innerHTML="valid emailid!";
+                }else{
+                    document.getElementById("email1").innerHTML="invalid emailid!";
+                }
+            }
+            function validge(){
+                let age=document.getElementById("age").value;
+                if(age>18&&100>age){
+                document.getElementById("age1").innerHTML="valid age!";
+                }else{
+                document.getElementById("age1").innerHTML="invalid age!";
+                }
+            }
+            function submit(){
+                let name=document.getElementById("name").value;
+                let mail=document.getElementById("email").value;
+                let age=document.getElementById("age").value;
+              if(name.trim()!==""&&mail.includes("@")&&age>18&&100>age){
+                sessionStorage.setItem("name",name);
+                sessionStorage.setItem("email",mail);
+                sessionStorage.setItem("age",age);
+                alert("data stored");
+
+              }else{
+                alert("enter valid data");
+              }
+
+            }
+    
+
+        </script>
+        
+    </body>
+</html>
