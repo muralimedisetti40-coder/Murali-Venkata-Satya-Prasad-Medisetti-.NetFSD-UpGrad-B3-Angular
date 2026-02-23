@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <title>user info</title>
+    </head>
+    <body>
+        <h1>user information</h1>
+        <input type="button" value="userinfo" onclick="userinfo(user)">
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+
+        <script>
+            var user={
+                name:"murali",
+                age:"22",
+                village:"bhimavaram"
+            };
+            function userinfo(userObj){
+              document.getElementById("p1").innerHTML="name :"+userObj.name;
+              document.getElementById("p2").innerHTML="age :"+userObj.age;
+              document.getElementById("p3").innerHTML="village :"+userObj.village;
+
+
+            }
+        </script>
+    </body>
+</html>
