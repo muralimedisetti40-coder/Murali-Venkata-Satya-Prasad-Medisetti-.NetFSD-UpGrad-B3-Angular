@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student marks</title>
+    </head>
+    <body>
+        <h1> student marks</h1>
+        <button onclick="result()">see results</button>
+        <p id="total"></p>
+        <p id="avg"></p>
+        <p id="res"></p>
+        <script>  
+        function result(){
+            const students=[80,45,75,90];
+            const total=students.reduce((marks,n)=> marks+n,0);
+            const average=total/students.length;
+            const result=average>50?"pass":"fail";
+            document.getElementById("total").innerHTML=`total marks =  ${total}`;
+            document.getElementById("avg").innerHTML=`average marks = ${average}`;
+            document.getElementById("res").innerHTML=`result is = ${result}`;
+        }
+        </script>
+
+
+    </body>
+</html>

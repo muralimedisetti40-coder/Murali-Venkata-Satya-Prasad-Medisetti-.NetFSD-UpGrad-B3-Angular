@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping mail invoice</title>
+    </head>
+    <body>
+     <h1>shopping mall </h1>
+     <button onclick="getdata()">get cart price</button>
+     <p id="invoice"></p>
+     <script>
+        function getdata(){
+        const product=[
+            {name:"laptop",price:50000,quntity:3},
+            {name:"mouse",price:500,quntity:2},
+            {name:"keyboard",price:5000,quntity:6},
+        ];
+        const totalitems=product.map(item => ({
+         ...item,
+         itemtotal: item.price * item.quntity
+        }));
+        const total=totalitems.reduce((sum,item)=> sum+item.itemtotal,0);
+       // console.log(total);
+        const cart=`${totalitems.map(item =>
+        `product :${item.name}<br/>
+         price :${item.price}<br/>
+         quantity:${item.quntity}<br/>
+         itemtotal:${item.itemtotal}<br/>`)}<br/>
+         grandtotal:${total}`;
+         document.getElementById("invoice").innerHTML=`<h1>invoice</h1><br/>${cart}`;
+         //console.log(cart);
+         }
+     </script>
+    </body>
+</html>

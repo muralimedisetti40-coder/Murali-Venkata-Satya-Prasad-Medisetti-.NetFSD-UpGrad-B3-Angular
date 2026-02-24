@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Filter</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+<h2>Employee Management</h2>
+<select id="jobSelect">
+    <option value="All">All Employees</option>
+    <option value="Manager">Manager</option>
+    <option value="Salesman">Salesman</option>
+    <option value="Clerk">Clerk</option>
+</select>
+<button onclick="showEmployees()">Show Emps</button>
+<div id="result"></div>
+<script>
+const employees = [
+    { empno: 101, name: "Ravi", job: "Manager", salary: 50000 },
+    { empno: 102, name: "Anita", job: "Salesman", salary: 30000 },
+    { empno: 103, name: "Kiran", job: "Clerk", salary: 20000 },
+    { empno: 104, name: "Suresh", job: "Manager", salary: 55000 },
+    { empno: 105, name: "Divya", job: "Salesman", salary: 32000 }
+];
+function showEmployees() {
+    const selectedJob = document.getElementById("jobSelect").value;
+    const filteredEmps = selectedJob === "All" ? employees : employees.filter(emp => emp.job === selectedJob);
+    const table = `
+        <table>
+            <tr>
+                <th>Emp No</th>
+                <th>Name</th>
+                <th>Job</th>
+                <th>Salary</th>
+            </tr>
+            ${filteredEmps.map(emp => `
+                <tr>
+                    <td>${emp.empno}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.job}</td>
+                    <td>${emp.salary}</td>
+                </tr>
+            `).join("")}
+        </table>
+    `;
+    document.getElementById("result").innerHTML = table;
+}
+
+</script>
+
+</body>
+</html>
