@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Report</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Weather Report</h1>
+    <button onclick="getWeather()">See Weather</button>
+    <ul id="list1"></ul>
+    <script>
+        async function getWeather() {
+            const url = "https://api.open-meteo.com/v1/forecast?latitude=17.0005&longitude=81.8040&current_weather=true";
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch weather data");
+                }
+                const weatherData = await response.json();
+                displayWeather(weatherData.current_weather);
+            } catch (error) {
+                console.error(error.message);
+                document.getElementById("list1").innerHTML =
+                    `<li style="color:red;">Error: ${error.message}</li>`;
+            }
+        }
+        function displayWeather(data) {
+            const str = `
+                <li style="color:green;""> Temperature: ${data.temperature} °C</li>
+                <li style="color:green;"">  Wind Speed: ${data.windspeed} km/h</li>
+                <li style="color:green;"">  Time: ${data.time}</li>`;
+            document.getElementById("list1").innerHTML = str;
+        }
+    </script>
+</body>
+</html>
