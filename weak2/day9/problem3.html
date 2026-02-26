@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment System</title>
+</head>
+<body>
+<h2>Payment System</h2>
+<button onclick="b1()">amount</button>
+<div id="output"></div>
+<script>
+class Payment {
+    pay(amount) {
+        return `Processing Payment of ₹${amount}`;
+    }
+}
+class CreditCardPayment extends Payment {
+    pay(amount) {
+        return `Paid ${amount} using Credit Card`;
+    }
+}
+class UPIPayment extends Payment {
+    pay(amount) {
+        return `Paid ${amount} using UPI`;
+    }
+}
+class CashPayment extends Payment {
+    pay(amount) {
+        return `Paid ${amount} in Cash`;
+    }
+}
+function b1(){
+const payment1 = new CreditCardPayment();
+const payment0=new Payment();
+const payment2 = new UPIPayment();
+const payment3 = new CashPayment();
+document.getElementById("output").innerHTML =
+    payment1.pay(500) + "<br/>" +
+    payment2.pay(200) + "<br/>" +
+    payment0.pay(195) + "<br/>" +
+    payment3.pay(5);
+}
+</script>
+
+</body>
+</html>

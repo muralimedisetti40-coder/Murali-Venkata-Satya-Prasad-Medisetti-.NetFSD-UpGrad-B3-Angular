@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head><title>student data</title> </head>
+    <body>
+        <h1>student data</h1>
+        <button onclick="getdata()">student info</button>
+        <ul id="data"></ul>
+        <script>
+            function getdata(){
+                var list=document.getElementById("data");
+            class Student{
+              constructor(name, rollnum, marks) {
+              this.name = name;
+              this.rollnum = rollnum;
+              this.marks = marks;
+              }
+              getinfo(){
+                    let l1obj=document.createElement("li");
+                     l1obj.innerHTML=`student name: ${this.name}<br/> rollnum : ${this.rollnum}<br/> marks : ${this.marks}`;
+                     list.appendChild(l1obj);
+                }
+                getresult(){
+                    let str="";
+                    if(this.marks>=90){
+                      str="A Grade";
+                    }else if(this.marks>=75){
+                      str="B Grade";
+                    }else if(this.marks>50){
+                       str="C Grade";
+                    }else{
+                        str="Fail";
+                    }
+                    let l2obj=document.createElement("li");
+                    l2obj.innerHTML=`students  grade is ${str}`;
+                    list.append(l2obj);
+                }
+            }
+            const s1=new Student("murali",20,55);
+            s1.getinfo();
+            s1.getresult();
+        }
+        </script>
+    </body>
+</html>

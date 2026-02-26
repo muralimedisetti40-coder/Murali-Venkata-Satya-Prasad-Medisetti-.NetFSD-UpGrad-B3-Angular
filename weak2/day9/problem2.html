@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head><title>car details</title></head>
+    <body>
+        <h1>car information</h1>
+        <button onclick="carinfo()">carinfo</button>
+        <h2 id="info"></h2>
+        <h2 id="car"></h2>
+        <script>
+            function carinfo(){
+                class Vehicle{
+                 constructor(brand,speed ) {
+                 this.brand = brand;
+                 this.speed = speed;
+                 }
+                 displayinfo(){
+                  document.getElementById("info").innerHTML=`brand name: ${this.brand}<br/> speed is : ${this.speed}`;
+                 }
+                }
+                class car extends Vehicle{
+                  constructor(brand,speed,fueltype){
+                    super(brand,speed);
+                    this.fueltype=fueltype;
+                  }
+                    showcardetails(){
+                        document.getElementById("car").innerHTML=`fuel type:${this.fueltype}`;
+                    }
+                }
+                const display=new car("Bmw",280,"petrol");
+                display.showcardetails();
+                display.displayinfo();
+            }
+        </script>
+    </body>
+</html>
