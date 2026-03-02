@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic FAQ Toggle Section</title>
+        <style>
+            p{
+                display: none;
+            }
+            .active{
+                color: rgb(248, 2, 2);
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Dynamic FAQ Toggle Section</h1>
+    <h4 class="ques">1. When was the company established?</h4>
+    <p>The company was established in 2018.</p>
+    <h4 class="ques">2. What services does the company provide?</h4>
+    <p>The company provides web development, mobile app development, and software solutions.</p>
+    <h4 class="ques">3. What is the annual income of the company?</h4>
+    <p>The company earns approximately 100 crore per year.</p>
+    <h4 class="ques">4. Where is the company located?</h4>
+    <p>The company is located in Hyderabad, India.</p>
+    <h4 class="ques">5. How can customers contact the company?</h4>
+    <p>Customers can contact the company via email or through the official website contact form.</p>
+    <script  src="https://code.jquery.com/jquery-4.0.0.js">		
+	</script>
+    <script>
+     $(document).ready(function(){
+        $(".ques").click(function(){
+            $("p").hide();
+            $(this).next("p").show();
+            $(this).toggleClass("active");
+        });
+     });
+    </script>    
+</body>
+</html>

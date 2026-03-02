@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Student Feedback Form Interaction
+</title></head>
+<body>
+    <h1>Student Feedback Form Interaction</h1>
+    <label>student name:</label>
+    <input type="text" id="text1" placeholder="enter name" autofocus="on"><br/><br/>
+    <label>email id:</label>
+    <input type="email" id="text2" placeholder="enter emailid"><br/><br/>
+    <label>rating:</label>
+    <select id="rating">
+        <option value="">Select Rating</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+    </select><br/><br/>
+    <label>comments:</label>
+    <textarea name="comments" id=""></textarea><br/><br/>
+    <button id="submit">submit</button><br/><br/>
+    <p id="result"></p>
+     <script  src="https://code.jquery.com/jquery-4.0.0.js">		
+	</script>
+    <script>
+        $(document).ready(function(){
+        $("#submit").click(function(){
+         let name=$("#text1").val().trim();
+         let mail=$("#text2").val().trim();
+        if(name===""||mail==""){
+         $("#result").text("please enter  name and email");
+        }else{
+        $("#result").text("data submited sucessfully");
+
+        }
+        });
+        });
+    </script>
+</body>
+</html>

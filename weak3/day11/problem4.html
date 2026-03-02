@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive To-Do List</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;}
+    </style>
+</head>
+<body>
+<h2>To-Do List Application</h2>
+<input type="text" id="taskInput" placeholder="Enter task">
+<button id="addBtn">Add</button>
+<h4>Total Tasks: <span id="totalCount">0</span></h4>
+<h4>Completed Tasks: <span id="completedCount">0</span></h4>
+<ul id="taskList"></ul>
+<script  src="https://code.jquery.com/jquery-4.0.0.js">	 </script>
+<script>
+$(document).ready(function(){
+    var total = 0;
+    var completed = 0;
+    $("#addBtn").click(function(){
+        var taskText = $("#taskInput").val().trim();
+        if(taskText !== ""){
+            total++;
+            $("#totalCount").text(total);
+            $("#taskList").append(
+                "<li>" +
+                "<span class='task'>" + taskText + "</span>" +
+                "<button class='completeBtn'>Complete</button>" +
+                "<button class='deleteBtn'>Delete</button>" +
+                "</li>"
+            );
+            $("#taskInput").val("");
+        }
+    });
+    $("#taskList").on("click", ".completeBtn", function(){
+        var taskSpan = $(this).siblings(".task");
+        taskSpan.toggleClass("completed");
+        if(taskSpan.hasClass("completed")){
+            completed++;
+        } else {
+            completed--;
+        }
+        $("#completedCount").text(completed);
+    });
+    $("#taskList").on("click", ".deleteBtn", function(){
+        var taskSpan = $(this).siblings(".task");
+        if(taskSpan.hasClass("completed")){
+            completed--;
+            $("#completedCount").text(completed);
+        }
+        total--;
+        $("#totalCount").text(total);
+        $(this).parent().remove();
+    });
+});
+</script>
+
+</body>
+</html>

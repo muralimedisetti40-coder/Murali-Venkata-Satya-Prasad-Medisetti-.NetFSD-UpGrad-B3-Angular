@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>products</title>
+    </head>
+    <body>
+        <h1>ecommerce website</h1>
+        <h1 style="text-align: right;">cart count:<span id="cart">0</span></h1>
+        <h4>i phone 15</h4>
+        <button class="btn1">add to cart</button>
+        <span class="msg"></span>
+        <h4>macbook m2</h4>
+        <button class="btn1">add to cart</button>
+        <span class="msg"></span>
+        <h4>mouse</h4>
+        <button class="btn1">add to cart</button>
+        <span class="msg"></span>
+        <h4>keyboard</h4>
+        <button class="btn1">add to cart</button>
+        <span class="msg"></span>
+        <script  src="https://code.jquery.com/jquery-4.0.0.js">		
+	    </script>
+        <script>
+            $(document).ready(function(){
+                var count=0;
+                $(".btn1").click(function(){
+                 count++;
+                 $("#cart").text(count);
+                 $(this).prop("disabled",true);
+                 $(this).next("span").text("product added sucess")
+                });
+            });
+        </script>
+    </body>
+</html>
